@@ -5,6 +5,11 @@
 }
 
 :root {
+  /* .regular-btn
+.filled-btn
+.link-style */
+
+  --transition: 0.3s;
 }
 
 html {
@@ -13,6 +18,8 @@ html {
 
 body {
   background-color: #121416;
+  font-family: "Cinzel", serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -52,30 +59,108 @@ ul {
     width: 1170px;
   }
 }
-div {
+
+.btn {
+  font-family: "Montserrat", sans-serif;
   display: block;
   width: fit-content;
   margin: 100px auto;
   font-size: 18px;
   text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 3px;
+  letter-spacing: -0.5px;
   padding: 15px;
-  border-radius: 5px;
+  font-weight: 500;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.btn > svg {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 3px;
+  color: #bf841a;
+}
+.regular-btn {
   background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-width: 1px;
   border-style: solid;
   border-image: linear-gradient(
-      160deg,
+      155deg,
       #ffe195,
-      #f2bb5a,
-      #bf790061,
-      rgba(0, 0, 0, 0) 40%,
-      #00000000 60%,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 50%,
+      #00000000 70%,
       #8fa7ff57,
       #8fa7fffd
     )
     1;
+}
+.regular-btn:hover {
+  border-image: linear-gradient(
+      -155deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 50%,
+      #00000000 70%,
+      #8fa7ff57,
+      #8fa7fffd
+    )
+    1;
+}
+.filled-btn {
+  color: #0a0d11;
+  background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffcd74);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.filled-btn:hover {
+  background: linear-gradient(-25deg, #ffe5a1, #bf841a, #ffcd74);
+}
+.filled-btn > svg {
+  color: inherit;
+}
+.link-style {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  width: fit-content;
+  margin: 100px auto;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  font-variant: small-caps;
+  color: white;
+  text-size-adjust: 100px;
+}
+.link-style::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: radial-gradient(#f7d587, #8a5b08, #ff010100 70%);
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.link-style:hover::before {
+  width: calc(100% - 20px);
 }
