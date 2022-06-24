@@ -8,7 +8,9 @@
   /* .regular-btn
 .filled-btn
 .link-style */
-
+  --body-color: #121416;
+  --radial-gradient: (#f7d587, #8a5b08, #ff010100 70%);
+  --linear-gradient: (-45deg, #ffe5a1, #bf841a, #ffe5a1);
   --transition: 0.3s;
 }
 
@@ -17,7 +19,7 @@ html {
 }
 
 body {
-  background-color: #121416;
+  background-color: var(--body-color);
   font-family: "Cinzel", serif;
   font-family: "Montserrat", sans-serif;
 }
@@ -141,6 +143,7 @@ ul {
   font-variant: small-caps;
   color: white;
   text-size-adjust: 100px;
+  transition: var(--transition);
 }
 .link-style::before {
   content: "";
@@ -163,4 +166,9 @@ ul {
 }
 .link-style:hover::before {
   width: calc(100% - 20px);
+}
+.link-style:focus {
+  background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
