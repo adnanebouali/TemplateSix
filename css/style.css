@@ -9,8 +9,8 @@
 .filled-btn
 .link-style */
   --body-color: #121416;
-  --radial-gradient: (#f7d587, #8a5b08, #ff010100 70%);
-  --linear-gradient: (-45deg, #ffe5a1, #bf841a, #ffe5a1);
+  --radial-gradient: radial-gradient(#f7d587, #8a5b08, #ff010100 70%);
+  --linear-gradient: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
   --transition: 0.3s;
 }
 
@@ -20,8 +20,8 @@ html {
 
 body {
   background-color: var(--body-color);
-  font-family: "Cinzel", serif;
   font-family: "Montserrat", sans-serif;
+  height: 100vh;
 }
 
 a {
@@ -64,13 +64,11 @@ ul {
 
 .btn {
   font-family: "Montserrat", sans-serif;
-  display: block;
   width: fit-content;
-  margin: 100px auto;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: -0.5px;
-  padding: 15px;
+  padding: 13px 30px;
   font-weight: 500;
   transition: var(--transition);
   -webkit-transition: var(--transition);
@@ -79,11 +77,12 @@ ul {
   -o-transition: var(--transition);
 }
 .btn > svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   position: relative;
-  top: 3px;
+  top: 2px;
   color: #bf841a;
+  margin-left: 5px;
 }
 .regular-btn {
   background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
@@ -119,11 +118,6 @@ ul {
 .filled-btn {
   color: #0a0d11;
   background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffcd74);
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 .filled-btn:hover {
   background: linear-gradient(-25deg, #ffe5a1, #bf841a, #ffcd74);
@@ -172,3 +166,161 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* ..............................................  */
+/* Start Landing */
+.landing {
+  position: relative;
+  overflow: hidden;
+}
+.landing::after,
+.landing::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: -1;
+}
+.landing::before {
+  top: 45%;
+  left: -200px;
+  background-color: transparent;
+  box-shadow: 100px 0 200px 70px #26487a9b;
+  border-radius: 50%;
+}
+.landing::after {
+  top: 0;
+  right: -200px;
+  box-shadow: -150px 0 200px 70px #26487a9b;
+}
+.landing .container {
+  min-height: calc(100vh);
+  display: flex;
+  align-items: flex-end;
+}
+.landing .text {
+  position: relative;
+  bottom: 60px;
+  max-width: 450px;
+}
+.landing .text h1 {
+  font-family: "Cinzel", serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  background: var(--linear-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.landing .text h1 span {
+  margin-top: 15px;
+  display: inline-block;
+  letter-spacing: 25px;
+  font-weight: 800;
+}
+.landing .text p {
+  font-size: 22px;
+  line-height: 2;
+  color: #eff3fb;
+  text-transform: capitalize;
+  margin-bottom: 37px;
+  margin-top: 0;
+  font-size: 16px;
+}
+.landing .text .buttons a {
+  display: inline-block;
+}
+.landing .text .buttons a:first-child {
+  margin-right: 30px;
+}
+
+.landing .image {
+  flex-basis: 60%;
+  position: relative;
+  bottom: 10px;
+}
+.landing .image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  bottom: 3px;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(
+      130deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 20%,
+      #00000000 75%,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070
+    )
+    1;
+  z-index: -1;
+}
+.landing .image img {
+  max-width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .landing .container {
+    align-items: center;
+  }
+  .landing :is(.text, .image) {
+    bottom: -60px;
+  }
+}
+@media (max-width: 991px) {
+  .landing .image {
+    display: none;
+  }
+  .landing .container {
+    align-items: center;
+  }
+  .landing .text {
+    bottom: 0;
+    text-align: center;
+    max-width: fit-content;
+  }
+  .landing .text h1 > span {
+    letter-spacing: 20px;
+  }
+  .landing .container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/Mask\ group.png);
+    background-repeat: no-repeat;
+    bottom: -50%;
+    right: -14%;
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: 480px) {
+  .landing .text h1 {
+    font-size: 28px;
+  }
+  .landing .text h1 > span {
+    letter-spacing: 10px;
+  }
+  .landing .text h1 > span {
+    letter-spacing: 10px;
+  }
+  .landing .container::before {
+    bottom: -20%;
+    right: -10%;
+  }
+  .landing .text .buttons a:first-child {
+    margin-right: 10px;
+  }
+  .landing .text .buttons a {
+    padding: 13px 22px;
+  }
+}
+/* End Landing */
