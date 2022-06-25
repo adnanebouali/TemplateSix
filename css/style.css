@@ -128,7 +128,6 @@ ul {
 .link-style {
   position: relative;
   font-family: "Montserrat", sans-serif;
-  display: block;
   width: fit-content;
   margin: 100px auto;
   padding: 10px;
