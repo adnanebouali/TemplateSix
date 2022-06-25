@@ -200,7 +200,7 @@ ul {
 }
 .landing .text {
   position: relative;
-  bottom: 60px;
+  bottom: 90px;
   max-width: 450px;
 }
 .landing .text h1 {
@@ -262,6 +262,21 @@ ul {
     )
     1;
   z-index: -1;
+  transition: var(--transition);
+}
+.landing .image:hover::before {
+  border-image: linear-gradient(
+      -130deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 20%,
+      #00000000 75%,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070
+    )
+    1;
 }
 .landing .image img {
   max-width: 100%;
