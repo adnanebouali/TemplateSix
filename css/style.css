@@ -15,6 +15,18 @@
   --text-color: rgb(255, 255, 255);
   --text-color-2: #eff3fb;
   --section-padding: 40px;
+  --border-image: linear-gradient(
+      130deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 20%,
+      #00000000 75%,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070
+    )
+    1;
 }
 
 html {
@@ -175,7 +187,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 1px;
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .main-title h3 {
   font-size: 25px;
@@ -481,6 +493,59 @@ ul {
   justify-content: end;
 }
 
-.work .container {
+.work .container .box-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+.work .container .box-holder .box {
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(
+      140deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 50%
+    )
+    1;
+  overflow: hidden;
+}
+
+.work .container .box-holder .box img {
+  max-width: 100%;
+}
+.work .container .box-holder .box p {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  background: linear-gradient(to right, #090b0eb8, #090b0e00);
+  margin: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: capitalize;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.work .container .box-holder .box:hover p {
+  bottom: -35px;
+}
+.work .container .box-holder .box:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transition: var(--transition);
+}
+.work .container .box-holder .box p span {
+  font-weight: 600;
 }
 /* End work  */
