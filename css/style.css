@@ -517,6 +517,7 @@ ul {
 
 .work .container .box-holder .box img {
   max-width: 100%;
+  transition: var(--transition);
 }
 .work .container .box-holder .box p {
   position: absolute;
@@ -535,15 +536,14 @@ ul {
   -o-transition: var(--transition);
 }
 .work .container .box-holder .box:hover p {
-  bottom: -35px;
+  bottom: -40px;
 }
 .work .container .box-holder .box:hover img {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transition: var(--transition);
+  transform: scale(1.15) rotate(2deg);
+  -webkit-transform: scale(1.15) rotate(2deg);
+  -moz-transform: scale(1.15) rotate(2deg);
+  -ms-transform: scale(1.15) rotate(2deg);
+  -o-transform: scale(1.15) rotate(2deg);
 }
 .work .container .box-holder .box p span {
   font-weight: 600;
