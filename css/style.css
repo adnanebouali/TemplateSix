@@ -12,6 +12,9 @@
   --radial-gradient: radial-gradient(#f7d587, #8a5b08, #ff010100 70%);
   --linear-gradient: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
   --transition: 0.3s;
+  --text-color: rgb(255, 255, 255);
+  --text-color-2: #eff3fb;
+  --section-padding: 40px;
 }
 
 html {
@@ -135,7 +138,7 @@ ul {
   font-weight: 500;
   font-size: 16px;
   font-variant: small-caps;
-  color: white;
+  color: var(--text-color);
   text-size-adjust: 100px;
   transition: var(--transition);
 }
@@ -166,6 +169,53 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.main-title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.main-title h3 {
+  font-size: 25px;
+  background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+.main-title h3::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: var(--radial-gradient);
+  right: -20px;
+}
+.main-title a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  position: relative;
+}
+.main-title a::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.main-title a:hover:before {
+  width: calc(100% - 10px);
+}
+
 /* ..............................................  */
 /* Start Landing */
 .landing {
@@ -231,7 +281,7 @@ ul {
 .landing .text p {
   font-size: 22px;
   line-height: 2;
-  color: #eff3fb;
+  color: var(--text-color-2);
   text-transform: capitalize;
   margin-bottom: 37px;
   margin-top: 0;
@@ -395,6 +445,7 @@ ul {
   text-align: center;
   padding: 0 27px;
 }
+
 @media (max-width: 991px) {
   .header .container {
     justify-content: center;
@@ -421,3 +472,15 @@ ul {
   }
 }
 /* End Header  */
+/* Start work  */
+.work {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.work .container .main-title {
+  justify-content: end;
+}
+
+.work .container {
+}
+/* End work  */
