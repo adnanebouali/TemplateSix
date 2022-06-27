@@ -8,7 +8,7 @@
   /* .regular-btn
 .filled-btn
 .link-style */
-  --body-color: #121416;
+  --body-color: #050607;
   --radial-gradient: radial-gradient(#f7d587, #8a5b08, #ff010100 70%);
   --linear-gradient: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
   --transition: 0.3s;
@@ -226,6 +226,19 @@ ul {
 }
 .main-title a:hover:before {
   width: calc(100% - 10px);
+}
+@media (max-width: 767px) {
+  .main-title h3 {
+    font-size: 18px;
+  }
+  .main-title a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .main-title {
+    justify-content: start !important;
+  }
 }
 
 /* ..............................................  */
@@ -496,9 +509,7 @@ ul {
 .work .container .box-holder {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 80px;
+  gap: 50px;
 }
 .work .container .box-holder .box {
   position: relative;
@@ -539,13 +550,94 @@ ul {
   bottom: -40px;
 }
 .work .container .box-holder .box:hover img {
-  transform: scale(1.15) rotate(2deg);
-  -webkit-transform: scale(1.15) rotate(2deg);
-  -moz-transform: scale(1.15) rotate(2deg);
-  -ms-transform: scale(1.15) rotate(2deg);
-  -o-transform: scale(1.15) rotate(2deg);
+  transform: scale(1.2) rotate(2deg);
+  -webkit-transform: scale(1.2) rotate(2deg);
+  -moz-transform: scale(1.2) rotate(2deg);
+  -ms-transform: scale(1.2) rotate(2deg);
+  -o-transform: scale(1.2) rotate(2deg);
+  transition: var(--transition);
 }
 .work .container .box-holder .box p span {
   font-weight: 600;
 }
 /* End work  */
+/* Start contribution */
+.contribution {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.contribution .container .info {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.contribution .container .info .text {
+  max-width: 600px;
+  text-align: center;
+}
+.contribution .container .info:first-child .text {
+  margin-left: auto;
+}
+.contribution .container .info:first-child {
+  background-image: url(../images/Banner2.png);
+  margin-bottom: 40px;
+}
+.contribution .container .info:last-child {
+  background-image: url(../images/Banner1.png);
+}
+.contribution .container .info h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  background: linear-gradient(-45deg, #ffe5a1, #bf841a, #ffe5a1);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 25px;
+  letter-spacing: 1.5px;
+}
+.contribution .container .info p {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #cccccc;
+  letter-spacing: 10px;
+  margin: 0 0 25px;
+  line-height: 1.6;
+}
+.contribution .container .info p > span {
+  font-weight: 600;
+}
+
+.contribution .container .info a {
+  display: block;
+  margin: 0 auto;
+}
+.contribution .container .info a > svg {
+  margin-right: 5px;
+  margin-left: 0;
+}
+@media (max-width: 767px) {
+  .contribution .container .info h2 {
+    font-size: 22px;
+  }
+  .contribution .container .info p {
+    font-size: 16px;
+  }
+  .contribution .container .info:first-child {
+    background-position: 30%;
+  }
+  .contribution .container .info:last-child {
+    background-position: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .contribution .container .info a {
+    padding: 13px 22px;
+    font-size: 14px;
+  }
+}
+
+/* End contribution */
