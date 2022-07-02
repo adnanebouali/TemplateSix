@@ -649,7 +649,6 @@ ul {
 .contact .container {
   text-align: center;
   text-transform: uppercase;
-  color: red;
 }
 
 .contact .container .info h3 {
@@ -667,11 +666,34 @@ ul {
   line-height: 1.8;
   letter-spacing: 1.5px;
 }
-.contact .container .socail {
-  display: flex;
-  gap: 20px;
+
+.contact .container svg {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(
+      140deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 50%
+    )
+    1;
+  color: #bf841a;
+  width: 38px;
+  height: 38px;
+  padding: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: var(--transition);
 }
-.contact .container .socail > svg {
-  color: rgb(255, 255, 255);
+.contact .container svg:hover {
+  border-image: linear-gradient(
+      -40deg,
+      #ffe195,
+      #f2ba5ac6,
+      #bf790070,
+      rgba(0, 0, 0, 0) 50%
+    )
+    1;
 }
 /* End Contact */
