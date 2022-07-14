@@ -12,24 +12,22 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <title>Document</title>
 </head>
 
 <body>
   <!-- Start Header -->
-  <div class="header">
+  <nav class="header" id="navbar">
     <div class="container">
       <a class="logo" href="#"><img src="images/Logo.png" alt=""></a>
       <ul class="links">
         <li><a class="link-style" href="#work">Work</a></li>
-        <li><a class="link-style" href="">Contribution</a></li>
-        <li><a class="link-style" href="">Get in Touch</a></li>
+        <li><a class="link-style" href="#contribution">Contribution</a></li>
+        <li><a class="link-style" href="#contact">Get in Touch</a></li>
         <li><a href=""><img src="images/hover=off.svg" alt=""></a></li>
       </ul>
     </div>
-  </div>
+  </nav>
 
   <!-- End  Header -->
   <!-- Start Landing -->
@@ -97,7 +95,7 @@
   </div>
   <!-- End work  -->
   <!-- Start Contribution -->
-  <div class="contribution">
+  <div class="contribution" id="contribution">
     <div class="container">
       <div class="main-title">
         <h3>Contribution</h3>
@@ -191,12 +189,12 @@
     </div>
   </div>
   <!-- End Contact -->
-  <script>$(document).ready(function () {
-      $(".owl-carousel").owlCarousel();
-    });</script>
-  <script src="jquery.min.js"></script>
-  <script src="owlcarousel/owl.carousel.min.js"></script>
-
+  <script>
+    window.onscroll = () => {
+      const nav = document.querySelector('#navbar');
+      if (this.scrollY <= 100) nav.className = ''; else nav.className = 'scroll';
+    };
+  </script>
 </body>
 
 </html>
