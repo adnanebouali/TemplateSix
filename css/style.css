@@ -511,7 +511,9 @@ nav .container .links a {
 
 .work .container .box-holder {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 50px;
 }
 .work .container .box-holder .box {
@@ -530,8 +532,9 @@ nav .container .links a {
 }
 
 .work .container .box-holder .box img {
-  max-width: 100%;
+  max-width: 340px;
   transition: var(--transition);
+  background-position: center;
 }
 .work .container .box-holder .box p {
   position: absolute;
